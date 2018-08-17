@@ -1,0 +1,28 @@
+.widget-travis {
+  // Build status indicators
+  .build {
+    &--success {
+      background-color: green;
+      color: white;
+    }
+
+    &--failed {
+      background-color: red;
+      color: white;
+    }
+  }
+
+  // Item formatting
+  ul {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    margin: 1rem;
+    padding: 1rem;
+  }
+}
