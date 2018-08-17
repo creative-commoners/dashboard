@@ -1,6 +1,5 @@
-$color-fail: #db4545;
-$color-repo-fail: rgba(219, 69, 69, .5);
-$color-pass: #39aa56;
+$color-fail: #D62929;
+$color-pass: #007100;
 
 .widget-travis {
   // Build status indicators
@@ -32,7 +31,8 @@ $color-pass: #39aa56;
     padding: 1rem;
 
     &.build--failed {
-      background-color: $color-repo-fail;
+      background-color: transparent;
+      border: 1px solid white;
     }
   }
 
