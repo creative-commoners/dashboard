@@ -1,22 +1,17 @@
-class Formatter
-    # Define organisations that should be stripped from repo slugs
-    # @todo move this to Config
-    def get_organisations()
-        return [
-            'bringyourownideas',
-            'dnadesign',
-            'silverstripe',
-            'symbiote',
-            'tractorcow'
-        ]
-    end
+require File.expand_path('../../lib/config', __FILE__)
 
+class Formatter
     # Convert a repo slug into a label for display
     def label_from_slug(slug)
-        self.get_organisations().each do |organisation|
-            slug = slug.gsub(/#{organisation}\//, '')
+        config = Config.new
+        stripSlugs = config.strip_repo_slugs_for_labels()
+
+        if !stripSlugs
+            return slug
         end
 
-        return slug
+        # Strip "silverstripe/" organisation, and optionally "silverstripe-"
+        # from repo slug
+        return slug.gsub(/^[^\/]*\/(silverstripe-)?/, '')
     end
 end

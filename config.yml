@@ -7,7 +7,6 @@ repositories:
   - silverstripe/silverstripe-akismet
   - silverstripe/silverstripe-auditor
   - silverstripe/silverstripe-blog
-  - silverstripe/comment-notifications
   - silverstripe/silverstripe-admin
   - silverstripe/silverstripe-assets
   - silverstripe/silverstripe-asset-admin
@@ -114,3 +113,6 @@ travis_branch_blacklist:
   silverstripe/silverstripe-spamprotection: [0.4, 1.0, 1.1]
   silverstripe/silverstripe-comments: [1.1, 1.2, 2.0]
   silverstripe/silverstripe-reports: [1.0]
+
+# Should repository slugs be stripped back to the last dash for labels?
+strip_repo_slugs_for_labels: true

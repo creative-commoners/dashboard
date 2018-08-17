@@ -1,21 +1,20 @@
 # Provides access to the dashboard configuration
 class Config
-    attr_accessor :filename
+    attr_accessor :data
 
     # Returns the configuration file name
-    def get_filename
-        if @filename
-            return @filename
-        end
-
-        return 'config.yml'
+    def initialize
+        fullPath = File.expand_path('../../config.yml', __FILE__)
+        @data = YAML.load_file(fullPath)
     end
 
     # Gets the list of configured repositories to inspect
     def get_repos
-        fullPath = File.expand_path('../../' + self.get_filename, __FILE__)
-        config = YAML.load_file(fullPath)
+        return @data['repositories']
+    end
 
-        return config['repositories']
+    # Whether to strip repository names for labels
+    def strip_repo_slugs_for_labels
+        return @data['strip_repo_slugs_for_labels']
     end
 end
