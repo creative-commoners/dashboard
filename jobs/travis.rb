@@ -2,7 +2,7 @@ require File.expand_path('../../lib/config', __FILE__)
 require File.expand_path('../../lib/formatter', __FILE__)
 require File.expand_path('../../lib/travis', __FILE__)
 
-SCHEDULER.every '2m', :first_in => '1s' do |job|
+SCHEDULER.every '10m', :first_in => '1s' do |job|
 
     config = Config.new
     formatter = Formatter.new
