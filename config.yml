@@ -77,7 +77,6 @@ repositories:
   - bringyourownideas/silverstripe-composer-update-checker
   - bringyourownideas/silverstripe-composer-security-checker
   - dnadesign/silverstripe-elemental
-  - dnadesign/silverstripe-elemental-subsites
   - dnadesign/silverstripe-elemental-userforms
   - silverstripe/cwp
   - silverstripe/cwp-core
@@ -114,6 +113,7 @@ travis_branch_blacklist:
   silverstripe/silverstripe-docsviewer: ['0.1', '0.2']
   silverstripe/silverstripe-framework: ['3.1', '3.2', '3.3', '3.4', '3.5']
   silverstripe/silverstripe-fulltextsearch: ['2.1', '2.2']
+  silverstripe/recipe-content-blocks: ['1.1']
   silverstripe/silverstripe-reports: ['1.0']
   silverstripe/silverstripe-siteconfig: ['3.1', '3.2', '3.3', '3.4', '3.5']
   silverstripe/silverstripe-spamprotection: ['0.4', '1.0', '1.1']
