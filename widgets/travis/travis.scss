@@ -1,28 +1,55 @@
+$color-fail: #db4545;
+$color-repo-fail: rgba(219, 69, 69, .5);
+$color-pass: #39aa56;
+
 .widget-travis {
   // Build status indicators
   .build {
+    color: white;
+
     &--success {
-      background-color: green;
-      color: white;
+      background-color: $color-pass;
     }
 
     &--failed {
-      background-color: red;
-      color: white;
+      background-color: $color-fail;
     }
   }
 
-  // Item formatting
-  ul {
+  // Styles for individual repositories
+  .repositories {
     display: inline-flex;
     flex-wrap: wrap;
     justify-content: center;
   }
 
-  li {
-    display: flex;
+  .repo {
     align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin: .5rem;
     padding: 1rem;
+
+    &.build--failed {
+      background-color: $color-repo-fail;
+    }
+  }
+
+  // Don't show individual branches for modules with no failures
+  .repo.build--success .repo__builds {
+    display: none;
+  }
+
+  // Styles for individal repository builds
+  .repo__builds {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .repo__build {
+    font-size: .75rem;
+    margin: .25rem;
+    padding: .25rem;
   }
 }

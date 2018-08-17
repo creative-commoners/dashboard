@@ -35,7 +35,6 @@ repositories:
   - silverstripe/silverstripe-ldap
   - silverstripe/silverstripe-lumberjack
   - silverstripe/silverstripe-mimevalidator
-  - silverstripe/silverstripe-multiform
   - silverstripe/silverstripe-realme
   - silverstripe/silverstripe-registry
   - silverstripe/silverstripe-reports
@@ -102,17 +101,27 @@ repositories:
   - silverstripe/silverstripe-tagfield
 
 # Branches that should be ignored from repositories:
+# Note: Ensure floaty values are cast as strings
 travis_branch_blacklist:
-  silverstripe/silverstripe-subsites: [0.3, 0.4, 0.5, 0.6, 1.0]
-  silverstripe/silverstripe-framework: [3.1, 3.2, 3.3, 3.4, 3.5]
-  silverstripe/silverstripe-cms: [3.1, 3.2, 3.3, 3.4, 3.5]
-  silverstripe/silverstripe-siteconfig: [3.1, 3.2, 3.3, 3.4, 3.5]
-  silverstripe/silverstripe-translatable: [1.0, 1.1, 2.0, 2.1]
-  symbiote/silverstripe-gridfieldextensions: [1.0, 1.1]
-  silverstripe/silverstripe-fulltextsearch: [2.1, 2.2]
-  silverstripe/silverstripe-spamprotection: [0.4, 1.0, 1.1]
-  silverstripe/silverstripe-comments: [1.1, 1.2, 2.0]
-  silverstripe/silverstripe-reports: [1.0]
+  dnadesign/silverstripe-elemental: ['1.3', '1.4', '1.5', '1.6']
+  tractorcow/silverstripe-fluent: ['3.1', '3.2', '3.7', '3.8']
+  silverstripe/cwp: ['1.1', '1.2', '1.3', '1.4', '1.5', '1.6', '1.7', '1.8', '1.9']
+  silverstripe/cwp-core: ['1.1', '1.2', '1.3', '1.4', '1.5', '1.6', '1.7', '1.8', '1.9']
+  silverstripe/silverstripe-admin: ['master_new']
+  silverstripe/silverstripe-blog: ['0.3', '0.4', '0.5', '0.6', '1.0', '2.0', '2.1', '2.2', '2.3', '3.0']
+  silverstripe/silverstripe-cms: ['3.1', '3.2', '3.3', '3.4', '3.5']
+  silverstripe/silverstripe-comments: ['1.1', '1.2', '2.0']
+  silverstripe/silverstripe-docsviewer: ['0.1', '0.2']
+  silverstripe/silverstripe-framework: ['3.1', '3.2', '3.3', '3.4', '3.5']
+  silverstripe/silverstripe-fulltextsearch: ['2.1', '2.2']
+  silverstripe/silverstripe-reports: ['1.0']
+  silverstripe/silverstripe-siteconfig: ['3.1', '3.2', '3.3', '3.4', '3.5']
+  silverstripe/silverstripe-spamprotection: ['0.4', '1.0', '1.1']
+  silverstripe/silverstripe-subsites: ['0.3', '0.4', '0.5', '0.6', '1.0']
+  silverstripe/silverstripe-tagfield: ['0.3', '0.4', '1.0', '1.2']
+  silverstripe/silverstripe-translatable: ['1.0', '1.1', '2.0', '2.1', 'master']
+  silverstripe/silverstripe-userforms: ['3.1', '4.0', '4.1', '4.2']
+  symbiote/silverstripe-gridfieldextensions: ['1.0', '1.1']
 
 # Should repository slugs be stripped back to the last dash for labels?
 strip_repo_slugs_for_labels: true

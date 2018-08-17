@@ -6,8 +6,17 @@ class Dashing.Travis extends Dashing.Widget
 
     onData: (data) ->
         # Fired whenever the widget receives data
-        for key,build of data.builds
-            if build.green
-                data.builds[key]['class'] = 'build--success'
+
+        # Add class for whether repos overall builds are passing
+        for x,repo of data.builds
+            if repo.green
+                data.builds[x]['class'] = 'repo build--success'
             else
-                data.builds[key]['class'] = 'build--failed'
+                data.builds[x]['class'] = 'repo build--failed'
+
+            # Add class for whether individual repo builds are passing
+            for y,build of repo.builds
+                if build.green
+                    data.builds[x]['builds'][y]['class'] = 'repo__build build--success';
+                else
+                    data.builds[x]['builds'][y]['class'] = 'repo__build build--failed';

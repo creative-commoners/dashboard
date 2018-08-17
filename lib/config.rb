@@ -17,4 +17,13 @@ class Config
     def strip_repo_slugs_for_labels
         return @data['strip_repo_slugs_for_labels']
     end
+
+    # Get specifically blacklisted branches
+    def get_branch_blacklist(repo_slug)
+        if repo_slug
+            return @data['travis_branch_blacklist'][repo_slug]
+        end
+
+        return @data['travis_branch_blacklist']
+    end
 end

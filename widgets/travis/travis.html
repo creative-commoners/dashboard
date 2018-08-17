@@ -1,5 +1,12 @@
-<ul>
-  <li data-foreach-item="builds" data-bind-class="item.class">
-    <span data-bind="item.label"></span>
-  </li>
+<ul class="repositories">
+    <li data-foreach-item="builds" data-bind-class="item.class">
+        <span data-bind="item.label"></span>
+
+        <!-- Show builds if the repo has failures -->
+        <ul class="repo__builds">
+            <li data-foreach-item="item.builds" data-bind-class="item.class">
+                <a href="#" data-bind="item.branch"></a>
+            </li>
+        </ul>
+    </li>
 </ul>
