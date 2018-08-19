@@ -70,7 +70,6 @@ repositories:
   - silverstripe/recipe-form-building
   - silverstripe/recipe-reporting-tools
   - silverstripe/recipe-services
-  - silverstripe/silverstripe-versioned-admin
   - tractorcow/silverstripe-fluent
   - tractorcow/silverstripe-proxy-db
   - bringyourownideas/silverstripe-maintenance
