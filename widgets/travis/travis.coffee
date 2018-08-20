@@ -14,9 +14,11 @@ class Dashing.Travis extends Dashing.Widget
             else
                 data.builds[x]['class'] = 'repo build--failed'
 
-            # Add class for whether individual repo builds are passing
+            # Add class for whether individual repo builds are passing, failed or in progress
             for y,build of repo.builds
                 if build.green
                     data.builds[x]['builds'][y]['class'] = 'repo__build build--success';
+                else if build.yellow
+                    data.builds[x]['builds'][y]['class'] = 'repo__build build--running';
                 else
                     data.builds[x]['builds'][y]['class'] = 'repo__build build--failed';

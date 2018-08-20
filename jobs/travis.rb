@@ -41,6 +41,8 @@ SCHEDULER.every '10m', :first_in => '1s' do |job|
             build_data = {
                 'branch': branch_name,
                 'green': branch_build.green?,
+                'yellow': branch_build.yellow?,
+                'red': branch_build.red?,
             }
             repo_builds.push(build_data)
 

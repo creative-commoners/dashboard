@@ -1,5 +1,6 @@
 $color-fail: #D62929;
 $color-pass: #007100;
+$color-running: #CECE03;
 
 .widget-travis {
   // Build status indicators
@@ -8,6 +9,11 @@ $color-pass: #007100;
 
     &--success {
       background-color: $color-pass;
+    }
+
+    &--running {
+      background-color: $color-running;
+      color: black;
     }
 
     &--failed {
