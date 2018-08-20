@@ -59,6 +59,9 @@ SCHEDULER.every '10m', :first_in => '1s' do |job|
         builds.push(repo)
     end
 
+    # Sort alphabetically (ignoring case)
+    builds.sort_by!{ |hsh| hsh[:label].downcase }
+
     send_event('travis', { builds: builds })
 
 end
