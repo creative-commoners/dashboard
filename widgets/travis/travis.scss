@@ -1,6 +1,7 @@
 $color-fail: #D62929;
 $color-pass: #007100;
 $color-running: #CECE03;
+$color-light-grey: #cccccc;
 
 .widget-travis {
   // Build status indicators
@@ -64,5 +65,11 @@ $color-running: #CECE03;
   .travis-logo {
     padding: 2rem;
     text-align: center;
+  }
+
+  .travis-user {
+    color: $color-light-grey;
+    font-size: .8rem;
+    margin-top: -35px;
   }
 }

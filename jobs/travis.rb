@@ -8,10 +8,14 @@ SCHEDULER.every '10m', :first_in => '1s' do |job|
     formatter = Formatter.new
     travis = TravisClient.new
 
+    client = travis.get_client()
+    # Get info on the current authorised user
+    user = client.user
+
     builds = []
 
     config.get_repos.each do |repo_slug|
-        build = travis.get_client().repo(repo_slug)
+        build = client.repo(repo_slug)
 
         repo_branch_blacklist = []
         if config.get_branch_blacklist(repo_slug)
@@ -64,6 +68,9 @@ SCHEDULER.every '10m', :first_in => '1s' do |job|
     # Sort alphabetically (ignoring case)
     builds.sort_by!{ |hsh| hsh[:label].downcase }
 
-    send_event('travis', { builds: builds })
+    send_event('travis', {
+        'builds': builds,
+        'user': user.name,
+    })
 
 end
