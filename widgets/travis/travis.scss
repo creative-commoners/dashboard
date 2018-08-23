@@ -63,13 +63,18 @@ $color-light-grey: #cccccc;
   }
 
   .travis-logo {
-    padding: 2rem;
+    padding: 1rem;
     text-align: center;
+
+    img {
+      height: 90px;
+    }
   }
 
   .travis-user {
     color: $color-light-grey;
     font-size: .8rem;
-    margin-top: -35px;
+    margin-left: 110px;
+    margin-top: -20px;
   }
 }
