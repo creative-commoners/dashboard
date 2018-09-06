@@ -18,7 +18,6 @@ Place configuration in the `config.yml` file. See `config.yml.template` for an e
 
 Put API tokens in environment variables:
 
-* `GITHUB_ACCESS_TOKEN`
 * `TRAVIS_ACCESS_TOKEN`
 
 ## Based on github-dashing
