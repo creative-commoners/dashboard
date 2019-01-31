@@ -87,7 +87,6 @@ repositories:
   - silverstripe/cwp-recipe-kitchen-sink
   - silverstripe/cwp-recipe-core
   - silverstripe/cwp-recipe-cms
-  - silverstripe/cwp-recipe-kitchen-sink
   - silverstripe/cwp-recipe-search
   - silverstripe/cwp-agencyextensions
   - silverstripe/cwp-installer
