@@ -36,6 +36,7 @@ repositories:
   - silverstripe/silverstripe-ldap
   - silverstripe/silverstripe-lumberjack
   - silverstripe/silverstripe-mimevalidator
+  - silverstripe/silverstripe-mfa
   - silverstripe/silverstripe-realme
   - silverstripe/silverstripe-registry
   - silverstripe/silverstripe-reports
@@ -78,6 +79,7 @@ repositories:
   - bringyourownideas/silverstripe-composer-security-checker
   - dnadesign/silverstripe-elemental
   - dnadesign/silverstripe-elemental-userforms
+  - elliot-sawyer/totp-authenticator
   - silverstripe/cwp
   - silverstripe/cwp-core
   - silverstripe/cwp-pdfexport
