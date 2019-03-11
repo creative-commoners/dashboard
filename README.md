@@ -18,7 +18,7 @@ Place configuration in the `config.yml` file. See `config.yml.template` for an e
 
 Put API tokens in environment variables:
 
-* `TRAVIS_ACCESS_TOKEN`
+* `TRAVIS_ACCESS_TOKEN` (note: this should be from travis-ci.org, not from .com)
 
 ## Based on github-dashing
 
