@@ -58,15 +58,16 @@ SCHEDULER.every '10m', :first_in => '1s' do |job|
             # See https://github.com/travis-ci/travis.rb/blob/master/lib/travis/client/states.rb
             branch_state = branch['last_build']['state']
             build_data = {
-                'branch': branch['name'],
-                'green': ['ready', 'passed'].include?(branch_state),
-                'yellow': ['created' 'queued', 'received', 'started'].include?(branch['state']),
-                'red': ['errored', 'cancelled', 'failed'].include?(branch['state']),
+                :branch => branch['name'],
+                :green  => !!['ready', 'passed'].include?(branch_state),
+                :yellow => !!['created' 'queued', 'received', 'started'].include?(branch['state']),
+                :red    => !!['errored', 'cancelled', 'failed'].include?(branch['state']),
             }
+
             repo_builds.push(build_data)
 
             # If a branch is failing, mark repo as failing
-            if build_data['green'] == false
+            if build_data['green'.to_sym] == false
                 repo_green = false
             end
         end
