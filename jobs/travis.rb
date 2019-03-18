@@ -60,8 +60,8 @@ SCHEDULER.every '10m', :first_in => '1s' do |job|
             build_data = {
                 :branch => branch['name'],
                 :green  => !!['ready', 'passed'].include?(branch_state),
-                :yellow => !!['created' 'queued', 'received', 'started'].include?(branch['state']),
-                :red    => !!['errored', 'cancelled', 'failed'].include?(branch['state']),
+                :yellow => !!['created' 'queued', 'received', 'started'].include?(branch_state),
+                :red    => !!['errored', 'cancelled', 'failed'].include?(branch_state),
             }
 
             repo_builds.push(build_data)
