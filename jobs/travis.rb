@@ -81,8 +81,8 @@ SCHEDULER.every '10m', :first_in => '1s' do |job|
         builds.push(repo)
     end
 
-    # Sort alphabetically (ignoring case)
-    builds.sort_by!{ |hsh| hsh[:label].downcase }
+    # Group all non-green builds first, then sort alphabetically (ignoring case)
+    builds.sort_by!{ |hsh| [ hsh[:green] ? 2 : 1, hsh[:label].downcase ] }
 
     # Get the current authenticated user's name
     user_response = conn.get '/user'
