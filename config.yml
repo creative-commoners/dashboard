@@ -124,7 +124,7 @@ travis_branch_blacklist:
   silverstripe/silverstripe-subsites: ['0.3', '0.4', '0.5', '0.6', '1.0']
   silverstripe/silverstripe-tagfield: ['0.3', '0.4', '1.0', '1.2']
   silverstripe/silverstripe-translatable: ['1.0', '1.1', '2.0', '2.1', 'master']
-  silverstripe/silverstripe-userforms: ['3.1', '4.0', '4.1', '4.2']
+  silverstripe/silverstripe-userforms: ['1.0', '0.5', '2.0', '3.1', '4.0', '4.1', '4.2']
   symbiote/silverstripe-gridfieldextensions: ['1.0', '1.1']
 
 # Should repository slugs be stripped back to the last dash for labels?
