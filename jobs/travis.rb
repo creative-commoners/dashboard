@@ -70,6 +70,11 @@ SCHEDULER.every '10m', :first_in => '1s' do |job|
             if build_data['green'.to_sym] == false
                 repo_green = false
             end
+
+            # If a branch is building, mark repo as "not green" so it will show in progress builds
+            if build_data['yellow'.to_sym] == true
+                repo_green = false
+            end
         end
 
         repo = {
