@@ -18,8 +18,6 @@ SCHEDULER.every '10m', :first_in => '1s' do |job|
 
     conn = Faraday.new(:url => 'https://api.travis-ci.org/') do |faraday|
         faraday.headers['Travis-API-Version'] = '3'
-        # faraday.headers['Authorization'] = 'token FvMxSh_9LpPiapR9FobalQ'
-        # faraday.headers['Authorization'] = 'token eqXiFeoMV2Ysu_Phv_eCrw'
         faraday.headers['Authorization'] = "token #{travis_token}"
         faraday.adapter  Faraday.default_adapter
     end
@@ -60,7 +58,7 @@ SCHEDULER.every '10m', :first_in => '1s' do |job|
             build_data = {
                 :branch => branch['name'],
                 :green  => !!['ready', 'passed'].include?(branch_state),
-                :yellow => !!['created' 'queued', 'received', 'started'].include?(branch_state),
+                :yellow => !!['created', 'queued', 'received', 'started'].include?(branch_state),
                 :red    => !!['errored', 'cancelled', 'failed'].include?(branch_state),
             }
 
