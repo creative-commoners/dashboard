@@ -34,6 +34,7 @@ repositories:
   - silverstripe/silverstripe-iframe
   - silverstripe/silverstripe-installer
   - silverstripe/silverstripe-ldap
+  - silverstripe/silverstripe-login-forms
   - silverstripe/silverstripe-lumberjack
   - silverstripe/silverstripe-mimevalidator
   - silverstripe/silverstripe-mfa
@@ -42,6 +43,7 @@ repositories:
   - silverstripe/silverstripe-reports
   - silverstripe/silverstripe-restfulserver
   - silverstripe/silverstripe-secureassets
+  - silverstripe/silverstripe-security-extensions
   - silverstripe/silverstripe-securityreport
   - silverstripe/silverstripe-segment-field
   - silverstripe/silverstripe-selectupload
@@ -53,11 +55,13 @@ repositories:
   - silverstripe/silverstripe-subsites
   - silverstripe/silverstripe-taxonomy
   - silverstripe/silverstripe-textextraction
+  - silverstripe/silverstripe-totp-authenticator
   - silverstripe/silverstripe-translatable
   - silverstripe/silverstripe-userforms
   - silverstripe/silverstripe-versioned
   - silverstripe/silverstripe-versioned-admin
   - silverstripe/silverstripe-versionfeed
+  - silverstripe/silverstripe-webauthn-authenticator
   - silverstripe/silverstripe-widgets
   - symbiote/silverstripe-advancedworkflow
   - symbiote/silverstripe-gridfieldextensions
