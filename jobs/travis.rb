@@ -2,11 +2,12 @@ require 'faraday'
 require 'yaml'
 require 'uri'
 require 'json'
+require 'tzinfo'
 
 require File.expand_path('../../lib/config', __FILE__)
 require File.expand_path('../../lib/formatter', __FILE__)
 
-SCHEDULER.every '10m', :first_in => '1s' do |job|
+SCHEDULER.every '1m', :first_in => '1s' do |job|
 
     raise ArgumentError, 'TRAVIS_ACCESS_TOKEN is not available in environment' unless ENV['TRAVIS_ACCESS_TOKEN'];
     travis_token = ENV['TRAVIS_ACCESS_TOKEN']
@@ -91,9 +92,15 @@ SCHEDULER.every '10m', :first_in => '1s' do |job|
     user_response = conn.get '/user'
     user = JSON.parse(user_response.body)
 
+    # Pass the current time so we can display last updated. Note this is using
+    # version 1.2.5 of the TZInfo API.
+    aucklandTimezone = TZInfo::Timezone.get('Pacific/Auckland')
+    updatedAt = aucklandTimezone.utc_to_local(Time.now.utc).strftime('%Y-%m-%d %H:%M:%S (NZ)')
+
     send_event('travis', {
         'builds': builds,
         'user': user['name'],
+        'updated': updatedAt,
     })
 
 end

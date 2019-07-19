@@ -85,6 +85,7 @@ DEPENDENCIES
   faraday
   octokit
   smashing
+  tzinfo
 
 BUNDLED WITH
    2.0.1

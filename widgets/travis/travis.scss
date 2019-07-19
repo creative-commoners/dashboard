@@ -71,10 +71,19 @@ $color-light-grey: #cccccc;
     }
   }
 
-  .travis-user {
+  .travis-user,
+  .last-updated-at {
     color: $color-light-grey;
     font-size: .8rem;
+  }
+
+  .travis-user {
     margin-left: 110px;
     margin-top: -20px;
+  }
+
+  .last-updated-at {
+    margin-left: 110px;
+    margin-bottom: -10px;
   }
 }
