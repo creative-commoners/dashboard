@@ -7,7 +7,7 @@ require 'tzinfo'
 require File.expand_path('../../lib/config', __FILE__)
 require File.expand_path('../../lib/formatter', __FILE__)
 
-SCHEDULER.every '1m', :first_in => '1s' do |job|
+SCHEDULER.every '10m', :first_in => '1s' do |job|
 
     raise ArgumentError, 'TRAVIS_ACCESS_TOKEN is not available in environment' unless ENV['TRAVIS_ACCESS_TOKEN'];
     travis_token = ENV['TRAVIS_ACCESS_TOKEN']
