@@ -13,6 +13,18 @@ class Config
         return @data['repositories']
     end
 
+    # Gets a list of all organisations in the list of repositories
+    def get_organisations
+        organisations = []
+        @data['repositories'].each do |repo_slug|
+            organisation = repo_slug.split('/')[0]
+             unless organisations.include?(organisation)
+                 organisations.push(organisation)
+             end
+        end
+        return organisations
+    end
+
     # Whether to strip repository names for labels
     def strip_repo_slugs_for_labels
         return @data['strip_repo_slugs_for_labels']

@@ -1,9 +1,8 @@
 <script type='text/javascript'>
 $(function() {
-  // These settings override the defaults set in application.coffee. You can do this on a per dashboard basis.
-  Dashing.gridsterLayout('[{"col":1,"row":1},{"col":3,"row":1},{"col":2,"row":2},{"col":3,"row":2},{"col":1,"row":2},{"col":5,"row":1},{"col":4,"row":2},{"col":2,"row":3}]')
+  Dashing.gridsterLayout('[{"col":1,"row":1,"size_x":4,"size_y":1},{"col":1,"row":2,"size_x":4,"size_y":2}]')
   Dashing.widget_base_dimensions = [370, 340]
-  Dashing.numColumns = 5
+  Dashing.numColumns = 4
 });
 </script>
 
@@ -12,8 +11,11 @@ $(function() {
 
 <div class="gridster">
   <ul>
-    <li data-row="1" data-col="1" data-sizex="5" data-sizey="2">
-      <div data-id="travis" data-view="Travis" data-unordered="true" data-title="Travis status" data-moreinfo="Travis builds by supported repositories"></div>
+    <li data-row="1" data-col="1" data-sizex="4" data-sizey="1">
+      <div data-id="travis" data-view="Travis" data-unordered="true" data-title="" data-moreinfo="Travis builds by supported repositories"></div>
+    </li>
+    <li data-row="2" data-col="1" data-sizex="4" data-sizey="2">
+      <div data-id="coverage" data-view ="Coverage" data-title="" data-moreinfo="Code coverage levels for supported repositories"></div>
     </li>
   </ul>
 </div>

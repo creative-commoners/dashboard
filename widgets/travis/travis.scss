@@ -33,8 +33,9 @@ $color-light-grey: #cccccc;
     align-items: center;
     display: flex;
     flex-direction: column;
+    font-size: .9rem;
     justify-content: center;
-    margin: .5rem;
+    margin: .2rem;
     padding: 1rem;
 
     &.build--failed {
@@ -56,7 +57,7 @@ $color-light-grey: #cccccc;
 
   .repo__build {
     border-radius: 3px;
-    font-size: .75rem;
+    font-size: .6rem;
     margin: .2rem;
     margin-top: .5rem;
     padding: .1rem .25rem;
@@ -71,19 +72,14 @@ $color-light-grey: #cccccc;
     }
   }
 
-  .travis-user,
-  .last-updated-at {
+  .travis-user {
     color: $color-light-grey;
     font-size: .8rem;
-  }
-
-  .travis-user {
     margin-left: 110px;
     margin-top: -20px;
   }
 
-  .last-updated-at {
-    margin-left: 110px;
-    margin-bottom: -10px;
+  .healthy-count {
+    font-size: .8rem;
   }
 }

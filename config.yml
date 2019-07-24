@@ -83,7 +83,6 @@ repositories:
   - bringyourownideas/silverstripe-composer-security-checker
   - dnadesign/silverstripe-elemental
   - dnadesign/silverstripe-elemental-userforms
-  - elliot-sawyer/totp-authenticator
   - silverstripe/cwp
   - silverstripe/cwp-core
   - silverstripe/cwp-pdfexport

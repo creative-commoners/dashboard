@@ -16,6 +16,7 @@ SCHEDULER.every '10m', :first_in => '1s' do |job|
     formatter = Formatter.new
 
     builds = []
+    healthyCount = 0
 
     conn = Faraday.new(:url => 'https://api.travis-ci.org/') do |faraday|
         faraday.headers['Travis-API-Version'] = '3'
@@ -82,7 +83,13 @@ SCHEDULER.every '10m', :first_in => '1s' do |job|
             'builds': repo_builds,
             'green': repo_green,
         }
-        builds.push(repo)
+
+        # We only want to show in progress and failed builds (in progress to show more on the dashboard)
+        if repo_green == false
+            builds.push(repo)
+        else
+            healthyCount += 1
+        end
     end
 
     # Group all non-green builds first, then sort alphabetically (ignoring case)
@@ -100,6 +107,7 @@ SCHEDULER.every '10m', :first_in => '1s' do |job|
     send_event('travis', {
         'builds': builds,
         'user': user['name'],
+        'healthyCount': healthyCount,
         'updated': updatedAt,
     })
 
