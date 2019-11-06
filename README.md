@@ -5,10 +5,17 @@ This dashboard shows metrics for the Creative Commoners and Open Sourcerers.
 ## Installation
 
 * Clone this repository
+* Install the app with one of the methods described below (host or docker install)
+* Go to `http://localhost:3030`
+
+### Host install:
 * Ensure you have [Smashing](https://github.com/Smashing/smashing) requirements set up
+* Define API tokens in your environment (e.g. `export TRAVIS_ACCESS_TOKEN=....`)
 * Run `smashing start`
 
-Go to `http://localhost:3030`
+### Docker install:
+* copy `.env.dist` to `.env` and fill in the gaps with your API tokens
+* Run `docker-compose up`
 
 ## Configuration
 
