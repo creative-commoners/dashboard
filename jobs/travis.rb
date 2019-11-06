@@ -45,7 +45,7 @@ SCHEDULER.every '10m', :first_in => '1s' do |job|
         # branches.each_pair do |branch_name, branch_build|
         branches['branches'].each do |branch|
             # Check the branch matches the whitelist
-            if not /^(\d+\.\d+$|master)/.match(branch['name'])
+            if not /^(\d+(\.\d+)?$|master)/.match(branch['name'])
                 next
             end
 
@@ -76,6 +76,9 @@ SCHEDULER.every '10m', :first_in => '1s' do |job|
                 repo_green = false
             end
         end
+
+        # sort branches by versions, where "major" comes first, "major.minor" after and "master" comes last
+        repo_builds = repo_builds.sort_by {|b| f = b[:branch].to_f; if b[:branch].count(".")==0 then f+0.9999 else f end}.reverse
 
         repo = {
             'repo_slug': repo_slug,
