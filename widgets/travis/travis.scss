@@ -53,6 +53,7 @@ $color-light-grey: #cccccc;
   .repo__builds {
     display: flex;
     flex-direction: row;
+    margin-top: 1em;
   }
 
   .repo__build {
@@ -61,6 +62,12 @@ $color-light-grey: #cccccc;
     margin: .2rem;
     margin-top: .5rem;
     padding: .1rem .25rem;
+
+    &.build--failed {
+      margin-top: 0;
+      font-size: 1em;
+      font-weight: bold;
+    }
   }
 
   .travis-logo {
