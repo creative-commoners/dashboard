@@ -20,6 +20,7 @@ repositories:
   - silverstripe/silverstripe-dms
   - silverstripe/silverstripe-dms-cart
   - silverstripe/silverstripe-documentconverter
+  - silverstripe/silverstripe-errorpage
   - silverstripe/silverstripe-elemental-bannerblock
   - silverstripe/silverstripe-elemental-fileblock
   - silverstripe/silverstripe-elemental-blocks
