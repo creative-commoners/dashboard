@@ -44,6 +44,11 @@ $color-light-grey: #cccccc;
     }
   }
 
+  .repo__name {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+
   // Don't show individual branches for modules with no failures
   .repo.build--success .repo__builds {
     display: none;
@@ -87,6 +92,7 @@ $color-light-grey: #cccccc;
   }
 
   .healthy-count {
-    font-size: .8rem;
+    font-size: 1rem;
+    margin-top: 1rem;
   }
 }
