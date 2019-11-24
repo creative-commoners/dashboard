@@ -114,6 +114,9 @@ h3 {
 // ----------------------------------------------------------------------------
 .gridster {
   margin: 0px auto;
+  display: grid;
+  align-items: center;
+  justify-items: center;
 }
 
 .icon-background {

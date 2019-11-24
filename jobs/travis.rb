@@ -111,6 +111,7 @@ SCHEDULER.every '10m', :first_in => '1s' do |job|
         'builds': builds,
         'user': user['name'],
         'healthyCount': healthyCount,
+        'totalCount': healthyCount + builds.length,
         'updated': updatedAt,
     })
 

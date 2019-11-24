@@ -5,7 +5,7 @@
 
 <ul class="repositories">
     <li data-foreach-item="builds" data-bind-class="item.class">
-        <span data-bind="item.label"></span>
+        <span data-bind="item.label" class="repo__name"></span>
 
         <!-- Show builds if the repo has failures -->
         <ul class="repo__builds">
@@ -17,5 +17,5 @@
 </ul>
 
 <p class="healthy-count">
-    <span class="healthy-count__number" data-bind="healthyCount"></span> repositories are healthy - <span class="last-updated-at__datetime" data-bind="updated"></span>
+    <span class="healthy-count__number" data-bind="healthyCount"></span> / <span data-bind="totalCount"></span> repositories are healthy - <span class="last-updated-at__datetime" data-bind="updated"></span>
 </p>
