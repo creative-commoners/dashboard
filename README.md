@@ -15,7 +15,7 @@ This dashboard shows metrics for the Creative Commoners and Open Sourcerers.
 
 ### Docker install:
 * copy `.env.dist` to `.env` and fill in the gaps with your API tokens
-* Run `docker-compose up`
+* Run `./docker/run.sh` or `cd docker && docker-compose up`
 
 ## Configuration
 
