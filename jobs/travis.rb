@@ -21,7 +21,11 @@ SCHEDULER.every '10m', :first_in => '1s' do |job|
     conn = Faraday.new(:url => 'https://api.travis-ci.org/') do |faraday|
         faraday.headers['Travis-API-Version'] = '3'
         faraday.headers['Authorization'] = "token #{travis_token}"
-        faraday.adapter  Faraday.default_adapter
+        faraday.adapter Faraday.default_adapter
+    end
+
+    gh_conn = Faraday.new(:url => 'https://github.com/') do |faraday|
+        faraday.adapter Faraday.default_adapter
     end
 
     config.get_repos.each do |repo_slug|
@@ -52,6 +56,15 @@ SCHEDULER.every '10m', :first_in => '1s' do |job|
             # Check it's not explicitly blacklisted
             if repo_branch_blacklist.include?(branch['name'])
                 next
+            end
+
+            if !!['errored', 'cancelled', 'failed'].include?(branch['last_build']['state'])
+                gh_response = gh_conn.head "#{repo_slug}/tree/#{branch['name']}"
+                if gh_response.status == 404
+                    # this means the branch doesn't exist anymore (perhaps was deleted)
+                    # don't care about this build anymore
+                    next
+                end
             end
 
             # Branch is good, store build details

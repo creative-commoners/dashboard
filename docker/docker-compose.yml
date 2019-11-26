@@ -1,0 +1,17 @@
+version: '3.7'
+
+x-entrypoint: &entry
+  - /bin/bash
+  - /app/docker/entrypoint.sh
+
+services:
+  dashboard:
+    build:
+      context: .
+    working_dir: /app
+    restart: always
+    network_mode: "host"
+    volumes:
+      - '..:/app'
+    env_file: ../.env
+    entrypoint: *entry
